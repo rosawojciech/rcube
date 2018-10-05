@@ -20,5 +20,7 @@ Plots cube in 2D
 \examples{
 cube <- createCube()
 plot(cube)
-
+# using pipe
+require(magrittr)
+createCube() \%>\% plot()
 }
