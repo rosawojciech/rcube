@@ -10,16 +10,17 @@
 #' @examples
 #' cube <- createCube()
 #' plot3dCube(cube) # generates plot of solved cube
-#' cube <- twistCube(cube,"(LLFFRRBB) x3")
-#' plot3dCube(cube) # plotted 'chess' pattern
+#' # 'checkerboard' pattern
+#' require(magrittr)
+#' cube %>% twistCube("(LLFFRRBB) x3") %>% plot3dCube()
 #'
 #' @export
 plot3dCube <- function(cube, sides = "both", rotate = "O") {
-  ocube <- cube
+  #ocube <- cube
   cube <- twistCube(cube,rotate)
   if(sides == "both") par(mfrow=c(1,2))
 if(sides %in% c("top","both"))  plot3Dtop(cube)
    if(sides %in% c("bottom","both") ) plot3Dbottom(cube)
-  return(ocube)
+  #return(ocube)
 }
 

@@ -9,7 +9,9 @@
 #' @examples
 #' cube <- createCube()
 #' plot(cube)
-#'
+#' # using pipe
+#' require(magrittr)
+#' createCube() %>% plot()
 #' @export
 plot.cube <- function(x, ...) {
  projekt <- x$cube
@@ -29,5 +31,5 @@ plot.cube <- function(x, ...) {
         })
 
     }
-return(x)
+#return(x)
     }
