@@ -262,7 +262,21 @@ draw_facelet3 <- function(x,y,col){
   ys <- c(0,-1,-3,-2)  + y
   polygon(xs, ys, col = col, lty =1 , lwd = 1, border = "black")
 }
-
+draw_facelet4 <- function(x,y,col){
+  xs <- c(0,1,1.75,0.75) + x
+  ys <- c(0,0,3/4,3/4)  + y
+  polygon(xs, ys, col = col, lty =1 , lwd = 1, border = "black")
+}
+draw_facelet5 <- function(x,y,col){
+  xs <- c(0,1,1,0) + x
+  ys <- c(0,0,1,1)  + y
+  polygon(xs, ys, col = col, lty =1 , lwd = 1, border = "black")
+}
+draw_facelet6 <- function(x,y,col){
+  xs <- c(0,3/4,3/4,0) + x
+  ys <- c(0,3/4,1.75,1)  + y
+  polygon(xs, ys, col = col, lty =1 , lwd = 1, border = "black")
+}
 plot3Dtop <- function(cube) {
   N <- cube$size
   plot(NULL,xlim = c(-N,N), ylim = c(-(2*N+1),2*N-1),asp = 0.6,axes = FALSE,xlab = "",ylab = "")

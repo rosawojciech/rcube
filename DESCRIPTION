@@ -1,7 +1,7 @@
 Package: rcube
 Type: Package
 Title: Simulations and Visualizations of Rubik's Cube (with Mods)
-Version: 0.3.1
+Version: 0.4
 Date: 2018-09-26
 Author: Wojciech Rosa
 Maintainer: Wojciech Rosa <w.rosa@pollub.pl>
