@@ -48,7 +48,7 @@
 #' L5:9 d3 l6:8 D3
 #' L6:8 d2 l7 D2 L7") %>% plot3dCube()
 #' # Creating octa cube
-#' createCube(N = 4, mode = "octa") %>% plot3dCube(c)
+#' createCube(N = 4, mode = "octa") %>% plot3dCube()
 #' # Rotating centers which is not visible on a classic cube (URL algorithm):
 #' createCube(N = 4, mode = "octa") %>% twistCube("(URLuurl)x2") %>% plot3dCube()
 #' # Creating void cube 8x8x8

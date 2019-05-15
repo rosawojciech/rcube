@@ -15,7 +15,11 @@
 
 plot3dFlat <- function(cube) {
   N <- cube$size
-  plot(NULL,xlim = c(-2*N,2*N), ylim = c(-(2*N+1),2*N-1),asp = 1,axes = FALSE,xlab = "",ylab = "")
+  wym_w <- dim(cube$cube)[1]
+  wym_s <- dim(cube$cube)[2]
+  par(mar=c(0,0,0,0))
+  #plot(NULL,xlim = c(-2*N,2*N), ylim = c(-(2*N+1),2*N-1),asp = 1,axes = FALSE,xlab = "",ylab = "")
+  plot(1, type="n", axes=F, xlab="", ylab="",xlim = c(0,wym_s/4),ylim = c(-wym_w/(4/3),wym_w/3),asp = 1)
 
   k <- 0
   top <- t(cube$cube[N:1,(2*N):(N+1)])

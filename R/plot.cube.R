@@ -27,7 +27,7 @@ plot.cube <- function(x, ...) {
         with(pkty, {
           ## Girth is diameter in inches
           symbols(col,row, squares = rep(1,times= nrow(pkty)), inches = FALSE,
-                  bg = kolory[i], fg = "black",add= TRUE)
+                  bg = kolory[i],fg = "black", add= TRUE)
         })
 
     }

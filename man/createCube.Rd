@@ -4,11 +4,11 @@
 \alias{createCube}
 \title{Creating cube size NxNxN}
 \usage{
-createCube(N = 3, mode = "normal", scheme = c("orange", "yellow", "blue",
-  "white", "green", "red"))
+createCube(N = 3, mode = "normal", scheme = c("orange", "yellow",
+  "blue", "white", "green", "red"))
 }
 \arguments{
-\item{N}{integer - size of cube. Default value is 3, and maximum is 20. More than maximum (20) is possible, however parser will ignore moving layers with number greater than 10 - you will not be able to get full varity of those cubes.}
+\item{N}{integer - size of cube. Default value is 3, and minimum is 1.}
 
 \item{mode}{string "normal" (default) or "octa" or "void". There are also are also available learning modes. Use keywords: "cross","first layer", "first two layers", "corners", "edges" to obtain your mode. For example "cross,centers", "corners" or "edges and centers". Default color scheme is the same as defined in parameter with added gray color.}
 

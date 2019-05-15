@@ -1,4 +1,4 @@
-#' Example dataset
+#' Positions dataset
 #'
 #' A dataset containing famous cubes positions. The variables are as follows:
 #'

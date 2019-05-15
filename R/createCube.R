@@ -2,7 +2,7 @@
 #'
 #' Creates a cube object with empty moves and color scheme information
 #'
-#' @param N integer - size of cube. Default value is 3, and maximum is 20. More than maximum (20) is possible, however parser will ignore moving layers with number greater than 10 - you will not be able to get full varity of those cubes.
+#' @param N integer - size of cube. Default value is 3, and minimum is 1.
 #' @param mode string "normal" (default) or "octa" or "void". There are also are also available learning modes. Use keywords: "cross","first layer", "first two layers", "corners", "edges" to obtain your mode. For example "cross,centers", "corners" or "edges and centers". Default color scheme is the same as defined in parameter with added gray color.
 #' @param scheme string vector - colour scheme for plotting cube. Name of colours should be given in specified order: front, top, right, bottom, left, back. In learning mode there is possibility to define 12 colors (standard 6 colors and 6 which are default gray).
 #'

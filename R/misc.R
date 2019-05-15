@@ -37,22 +37,24 @@ nawiasy.parse <- function(tekst,st = 1) {
   return(P)
 }
 rotacje.parse <- function(tekst) {
-  rot <- gregexpr(pattern = "[(][a-zA-Z0-9]*[)][0-9]",tekst)[[1]]
+  rot <- gregexpr(pattern = "[(][a-zA-Z0-9]*[)][0-9]+",tekst)[[1]]
   if(sum(rot)>0){
     for(i in rot)
     {
-      rot <- gregexpr(pattern = "[(][a-zA-Z0-9]*[)][0-9]",tekst)[[1]]
+      rot <- gregexpr(pattern = "[(][a-zA-Z0-9]*[)][0-9]+",tekst)[[1]]
       P <- nawiasy.parse(tekst,st = rot[1])
       tmp1 <- substr(tekst,1,P$p-1)
-      tmp2 <- paste0(strsplit(substr(tekst,P$p+1,P$k-1),"")[[1]],P$arg,collapse = "")
+      tmp2 <- paste0(strsplit(substr(tekst,P$p+1,P$k-1),"")[[1]],paste0(P$arg,collapse = ""),collapse = "")
       tmp3 <- substr(tekst,P$kk+1,100000)
       tekst <- paste0(tmp1,tmp2,tmp3)
     }}
   return(tekst)
 }
 kierunki.parse <- function(k) {
-
-  k2 <- unlist(strsplit(k,split=""))
+ # R R2 R20 R20:25
+  #k2 <- unlist(strsplit(k,split=""))
+  m <- gregexpr("[a-zA-Z]|[0-9]+|:",k)
+  k2 <- unlist(regmatches(k,m))
   k3 <- unlist(lapply(k2,function(i) as.integer2(i)))
   k3[is.na(k3)]<- 0
   k2 <- as.data.frame(k2)
@@ -84,7 +86,7 @@ kierunki.parse <- function(k) {
   return(k7)
 }
 kostka.obrot <- function(kostka,kierunki,razy) {
-  if(kierunki!='') {
+  if(trimws(kierunki)!='') {
     N <- sqrt(length(kostka)/3)/2
     N11 <- N+1
     N2 <- 2*N
@@ -98,9 +100,9 @@ kostka.obrot <- function(kostka,kierunki,razy) {
     {
       P <- nawiasy.parse(kierunki)
       for(r in 1:razy){
-        kostka <- kostka.obrot(kostka,substr(kierunki,1,P$p-1),1)
-        kostka <- kostka.obrot(kostka,substr(kierunki,P$p+1,P$k-1),as.integer(paste0(P$arg[-1],collapse="")))
-        kostka <- kostka.obrot(kostka,substr(kierunki,P$kk+1,100000),1)
+        kostka <- kostka.obrot(kostka,substr(kierunki,1,P$p-1),1) # przed nawiasem
+        kostka <- kostka.obrot(kostka,substr(kierunki,P$p+1,P$k-1),as.integer(paste0(P$arg[-1],collapse=""))) # nawias mnożenia
+        kostka <- kostka.obrot(kostka,substr(kierunki,P$kk+1,100000),1) # po nawiasie
       }
     }
     else{

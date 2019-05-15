@@ -3,7 +3,7 @@
 \docType{data}
 \name{positions}
 \alias{positions}
-\title{Example dataset}
+\title{Positions dataset}
 \format{A data frame with popular positions of cubes}
 \usage{
 data(positions)
