@@ -54,6 +54,7 @@
 #' # Creating void cube 8x8x8
 #' createCube(N = 8,mode = "void") %>% plot3dCube()
 #' @import magrittr
+#' @importFrom stats median
 #' @export
 twistCube <- function(cube,moves = "", times = 1){
   cube$cube <- kostka.obrot(cube$cube,moves,times)

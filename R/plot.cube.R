@@ -12,6 +12,10 @@
 #' # using pipe
 #' require(magrittr)
 #' createCube() %>% plot()
+#' # plot mosaics
+#' data(mosaics)
+#' plot(mosaics$einstein)
+#' @importFrom graphics par plot polygon
 #' @export
 plot.cube <- function(x, ...) {
  projekt <- x$cube

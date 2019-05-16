@@ -23,4 +23,7 @@ plot(cube)
 # using pipe
 require(magrittr)
 createCube() \%>\% plot()
+# plot mosaics
+data(mosaics)
+plot(mosaics$einstein)
 }

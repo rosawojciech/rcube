@@ -100,9 +100,9 @@ kostka.obrot <- function(kostka,kierunki,razy) {
     {
       P <- nawiasy.parse(kierunki)
       for(r in 1:razy){
-        kostka <- kostka.obrot(kostka,substr(kierunki,1,P$p-1),1) # przed nawiasem
-        kostka <- kostka.obrot(kostka,substr(kierunki,P$p+1,P$k-1),as.integer(paste0(P$arg[-1],collapse=""))) # nawias mnożenia
-        kostka <- kostka.obrot(kostka,substr(kierunki,P$kk+1,100000),1) # po nawiasie
+        kostka <- kostka.obrot(kostka,substr(kierunki,1,P$p-1),1) # before bracket
+        kostka <- kostka.obrot(kostka,substr(kierunki,P$p+1,P$k-1),as.integer(paste0(P$arg[-1],collapse=""))) # bracket
+        kostka <- kostka.obrot(kostka,substr(kierunki,P$kk+1,100000),1) # after bracket
       }
     }
     else{
