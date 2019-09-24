@@ -19,7 +19,7 @@ scramble <- function(cube,times = 0) {
   if(times == 0) times <- 10*N
   mo <- c("R","L","U","D","F","B","r","l","u","d","f","b")
   mov <- sample(mo,size = times,replace = T)
-  move <- paste0(mo,sample(1:(N-1),size = times, replace = T),collapse = " ")
+  move <- paste0(mov,sample(1:(N-1),size = times, replace = T),collapse = " ")
   cube <- twistCube(cube,move)
   return(cube)
 }
